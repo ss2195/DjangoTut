@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coding practice in Django</title>
+    </head>
+    <body>
+        <h1>This is a navbar</h1>
+        {% include 'navbar.html' %}
+        {% block content %} 
+        {% endblock %}
+
+        {% block content_another %} 
+            Replace me
+        {% endblock %}
+    </body>
+
+</html>

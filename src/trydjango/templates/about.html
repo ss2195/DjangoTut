@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>
+    Hello World
+</h1>
+<p> This is my About page</p>
+{% endblock %}
+
+{% block content_another %} 
+<h2>This is inside another block</h2>
+<h3> {{ my_text|capfirst|upper| title }}</h3>
+<h3> {{ my_number }}</h3>
+{{ my_html|safe }}
+{{ my_html|striptags }}<br>
+{{ my_html|striptags|slugify }}
+<ul>
+    
+    {% for item in my_list %}
+        {%if item == 3 %}
+            <li>{{ forloop.counter }}-{{ item|add:22 }}</li>
+        {% elif item == 2 %}
+            <li>{{ forloop.counter }}-{% widthratio item 1 22 %}</li>
+        {% else %}
+            <li>{{ forloop.counter }}-{% widthratio 100  item 1 %}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<h4>{{ my_nest.my_home.my_room }}</h4>
+
+
+{% endblock %}

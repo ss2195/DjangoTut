@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1> Product Create Page</h1>
+    <form action="." method="POST">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="yout title" />
+        <input type="submit" value="save" />
+    </form>
+{% endblock %}
